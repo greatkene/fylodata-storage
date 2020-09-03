@@ -1,0 +1,204 @@
+
+  
+  @keyframes progress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    color: hsl(243, 100%, 93%);
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 25px;
+    background-image: url("../img/bg-mobile.svg");
+    background-color: hsl(229, 57%, 11%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1024px) {
+    main {
+      background-image: none;
+    }
+    main::after {
+      content: "";
+      background: url(../img/bg-desktop.png) #0c122c no-repeat center center/cover;
+      width: 100%;
+      height: 50%;
+      border-top-left-radius: 250px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+  main .container {
+    display: grid;
+    grid-row-gap: 15px;
+    z-index: 2;
+  }
+  @media screen and (min-width: 1024px) {
+    main .container {
+      width: 100%;
+      max-width: 920px;
+      grid-template-columns: 353px auto;
+      grid-column-gap: 30px;
+    }
+  }
+  
+  .col-1 {
+    width: 100%;
+    height: auto;
+    min-width: 328px;
+    padding: 35px;
+    border-radius: 8px;
+    border-top-right-radius: 100px;
+    background-color: hsl(228, 56%, 26%);
+  }
+  .col-1 .logo {
+    margin-bottom: 30px;
+  }
+  .col-1 .icons {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-column-gap: 15px;
+    align-items: center;
+  }
+  .col-1 .icons .icon {
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(229, 57%, 11%);
+    height: 50px;
+  }
+  
+  .col-2 {
+    width: 100%;
+    height: auto;
+    min-width: 328px;
+    padding: 35px;
+    padding-bottom: 55px;
+    border-radius: 8px;
+    background-color: hsl(228, 56%, 26%);
+    font-size: 14px;
+    position: relative;
+  }
+  @media screen and (min-width: 1024px) {
+    .col-2 {
+      padding-bottom: 0;
+      height: 157px;
+      align-self: flex-end;
+    }
+  }
+  .col-2 .storage {
+    position: absolute;
+    background-color: #ffffff;
+    color: hsl(229, 57%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 40px;
+    font-weight: 700;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 0;
+    width: 179px;
+    height: 73px;
+    animation: 2s ease-in 0s fade-in;
+  }
+  @media screen and (min-width: 1024px) {
+    .col-2 .storage {
+      bottom: auto;
+      top: 0;
+      right: 35px;
+      left: auto;
+      transform: translateY(-50%);
+      border-bottom-right-radius: 0;
+    }
+    .col-2 .storage ::after {
+      content: "";
+      position: absolute;
+      top: 69px;
+      right: 0;
+      border-top: 25px solid #ffffff;
+      border-left: 25px solid transparent;
+    }
+  }
+  .col-2 .storage .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-2 .storage small {
+    font-size: 12px;
+    color: hsl(229, 7%, 55%);
+    text-transform: uppercase;
+    margin-left: 10px;
+  }
+  .data-info {
+    text-align: left;
+  }
+  .data-progress-bar {
+    display: block;
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: hsl(229, 57%, 11%);
+    padding: 3px;
+  }
+  .data-progress-bar-percent {
+    width: 75%;
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%)
+    100%);
+    border-radius: 10px;
+    animation: 2s ease 0s progress;
+  }
+  .data-progress-bar-percent::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    right: 2px;
+    top: 2px;
+  }
+  .col-2 .range {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  
+  footer {
+      background-color:  hsl(229, 57%, 11%);
+      text-align: center;
+  }
